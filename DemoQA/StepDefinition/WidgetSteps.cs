@@ -30,6 +30,13 @@ namespace DemoQA.StepDefinition
             widget.clickDatePicker();
         }
 
+        [When(@"I click on ToolTip Page")]
+        public void WhenIClickOnToolTipPage()
+        {
+            widget.clickToolTip();
+        }
+
+
 
 
 

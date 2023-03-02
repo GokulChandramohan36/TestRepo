@@ -41,6 +41,13 @@ namespace DemoQA.StepDefinition
             home.clickAlertLink();
         }
 
+        [When(@"I click on Interactions page")]
+        public void WhenIClickOnInteractionsPage()
+        {
+            home.clickInteractionsLink();  
+        }
+
+
 
 
 

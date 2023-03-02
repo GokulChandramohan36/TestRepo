@@ -55,6 +55,12 @@ namespace DemoQA.PageElements
             return widgets;
         }
 
+        public IWebElement interactions()
+        {
+            IWebElement interactions = driver.FindElement(By.XPath("(//*[@stroke='currentColor'])[5]"));
+            return interactions;
+        }
+
         public void isHomePageOpen()
         {
             Assert.True(homePageBottomLabel().Displayed);
@@ -84,6 +90,16 @@ namespace DemoQA.PageElements
             common.scrollToBottom();
             Assert.True(widgets().Displayed);
             widgets().Click();
+        }
+
+        public void clickInteractionsLink()
+        {
+            common.setWait("(//*[@stroke='currentColor'])[5]");
+            common.scrollToBottom();
+            Assert.True(interactions().Displayed);
+            interactions().Click();
+
+            
         }
 
     }

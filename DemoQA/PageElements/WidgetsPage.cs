@@ -37,6 +37,8 @@ namespace DemoQA.PageElements
 
         public void clickToolTip()
         {
+            common.scrollDownABit();
+            
             toolTip().Click();
         }
         public void clickAutoComplete()
