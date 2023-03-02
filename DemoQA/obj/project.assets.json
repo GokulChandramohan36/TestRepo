@@ -5763,11 +5763,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gokul.Chandramohan\\source\\repos\\specflow\\DemoQA\\DemoQA.csproj",
+      "projectUniqueName": "C:\\Users\\Gokul.Chandramohan\\source\\repos\\LatestGitRepo\\TestRepo\\DemoQA\\DemoQA.csproj",
       "projectName": "DemoQA",
-      "projectPath": "C:\\Users\\Gokul.Chandramohan\\source\\repos\\specflow\\DemoQA\\DemoQA.csproj",
+      "projectPath": "C:\\Users\\Gokul.Chandramohan\\source\\repos\\LatestGitRepo\\TestRepo\\DemoQA\\DemoQA.csproj",
       "packagesPath": "C:\\Users\\Gokul.Chandramohan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gokul.Chandramohan\\source\\repos\\specflow\\DemoQA\\obj\\",
+      "outputPath": "C:\\Users\\Gokul.Chandramohan\\source\\repos\\LatestGitRepo\\TestRepo\\DemoQA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gokul.Chandramohan\\AppData\\Roaming\\NuGet\\NuGet.Config",

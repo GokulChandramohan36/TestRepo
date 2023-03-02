@@ -1,10 +1,12 @@
 ﻿using DemoQA.CommonMethods;
 using DemoQA.Constants;
 using DemoQA.DriverSetup;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
@@ -68,7 +70,7 @@ namespace DemoQA.StepDefinition
             timeDatePicker().Click();
             selectMnth().Click();
             driver.FindElement(By.XPath("//*[text()='"+Month+"']")).Click();
-            driver.FindElement(By.XPath("//*[text()='" + Day + "']")).Click();
+            
             selectYear().Click();
             int Count = 2;
             DateTime now = DateTime.Now;
@@ -96,15 +98,60 @@ namespace DemoQA.StepDefinition
                     
                     Count++;
                 }
+                
 
             }
+            common.setWait("//*[text()='" + Day + "']");
+            driver.FindElement(By.XPath("//*[text()='" + Day + "']")).Click();
 
-           
+
+
+
+
+
 
 
 
 
         }
+        public void SelectTime(String Time)
+        {
+            IList<IWebElement> allProduct = driver.FindElements(By.XPath("//*[@class='react-datepicker__time-list']"));
+
+            foreach (IWebElement product in allProduct) 
+            {
+                try
+                {
+                    driver.FindElement(By.XPath("//*[text()='" + Time + "']")).Click();
+
+                }
+                catch (Exception e)
+                { 
+                    Console.WriteLine(e);
+                }
+                
+            }
+        }
+
+        [Then(@"I set Time as ""([^""]*)""")]
+        public void ThenISetTimeAs(string Time)
+        {
+            SelectTime(Time);
+        }
+
+
+        [Then(@"I validate the set Month as ""([^""]*)"" Year as ""([^""]*)"" Date as ""([^""]*)"" Time as ""([^""]*)""")]
+        public void ThenIValidateTheSetMonthAsYearAsDateAsTimeAs(string month, string year, string date, string Time)
+        {
+            string time = Time.Substring(1, Time.Length - 1);
+            String expectedResult = month + " " + date+", "+year+ " " + time;
+            String actualResult = timeDatePicker().GetAttribute("value");
+            Console.WriteLine("expected " + expectedResult);
+            Console.WriteLine("actual " + actualResult);
+            Assert.True(actualResult.Contains(expectedResult));
+        }
+
+
 
     }
 }

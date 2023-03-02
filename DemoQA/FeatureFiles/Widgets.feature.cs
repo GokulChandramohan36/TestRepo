@@ -129,8 +129,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate date picker")]
         [NUnit.Framework.CategoryAttribute("datePicker")]
-        [NUnit.Framework.TestCaseAttribute("January", "2050", "3", null)]
-        public void ValidateDatePicker(string month, string year, string date, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("January", "2050", "3", "01:30", null)]
+        public void ValidateDatePicker(string month, string year, string date, string time, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "datePicker"};
@@ -143,6 +143,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Month", month);
             argumentsOfScenario.Add("Year", year);
             argumentsOfScenario.Add("Date", date);
+            argumentsOfScenario.Add("Time", time);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate date picker", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 25
 this.ScenarioInitialize(scenarioInfo);
@@ -168,6 +169,88 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 30
  testRunner.Then(string.Format("I set the date in the datepicker using \"{0}\" \"{1}\" \"{2}\"", month, year, date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 31
+ testRunner.And(string.Format("I set Time as \"{0}\"", time), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+ testRunner.And(string.Format("I validate the set Month as \"{0}\" Year as \"{1}\" Date as \"{2}\" Time as \"{3}\"", month, year, date, time), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate the tool tip text")]
+        [NUnit.Framework.CategoryAttribute("ButtonToolTip")]
+        public void ValidateTheToolTipText()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "ButtonToolTip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate the tool tip text", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 42
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 43
+    testRunner.Given("I am in the Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 44
+ testRunner.When("I click on the widgets link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 45
+ testRunner.Then("I see the list of elements in widget menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 46
+ testRunner.When("I click on ToolTip Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
+ testRunner.Then("I validate the button tool tip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate the text tool tip")]
+        [NUnit.Framework.CategoryAttribute("TextToolTip")]
+        public void ValidateTheTextToolTip()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "TextToolTip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate the text tool tip", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 51
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 52
+    testRunner.Given("I am in the Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 53
+ testRunner.When("I click on the widgets link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 54
+ testRunner.Then("I see the list of elements in widget menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 55
+ testRunner.When("I click on ToolTip Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 56
+ testRunner.Then("I validate the text tool tip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
